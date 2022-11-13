@@ -1,0 +1,125 @@
+html{
+  --background: #FFFFFF;
+  --black: #222222;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0%;
+  font-size: 16px;
+  size: 100%;
+  background-color: var(--background);
+  font-family: 'Inter', 'Noto Sans JP', sans-serif;
+  line-height: 1.25;
+  overflow: scroll;
+}
+
+::-webkit-scrollbar{
+  width: 10px;
+  height: 0px;
+}
+
+
+::-webkit-scrollbar-thumb {
+  background: #00000015;
+  border-radius: 5px;
+}
+
+::selection {
+  color: white;
+  background-color: #4ea1ca50;
+}
+
+img.emoji {
+  height: 1em;
+  width: 1em;
+  margin: 0 .05em 0 .1em;
+  vertical-align: -0.1em;
+}
+
+img{
+  vertical-align: bottom;
+}
+
+a {
+  color:#269be8;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #176092;
+}
+
+p, h1, h2, h3, h4{
+  color: var(--black);
+}
+
+p {
+  font-size: 1rem;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+h2{
+  font-size: 2rem;
+}
+
+h3{
+  font-size: 1.5rem;
+}
+
+h4{
+  font-size: 1.5rem;
+}
+
+.header{
+  width: 100%;
+  height: 50px;
+  position: fixed;
+  top: 0;
+  background-color: #ffffff80;
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  z-index: 1;
+  display: flex;
+
+}
+
+.header .logo{
+  display: block;
+  opacity: 1;
+  margin: auto;
+}
+
+.header a{
+  width: 25px;
+}
+
+.page{
+  margin: auto;
+  margin-top: 125px;
+  width: 62.5%;
+  max-width: 1200px;
+}
+
+
+@media (max-width: 500px) {
+  .page {
+    width: 87.5%;
+  }
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 12.5px;
+  margin: 0px;
+  padding: 37.5px 0px;
+  margin-top: 75px;
+  width: 100%;
+  background-color: #f2f2f2;
+}

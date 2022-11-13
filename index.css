@@ -1,0 +1,214 @@
+/*布団が吹っ飛んだ*/
+
+.profile .pfcard{
+  padding: 50px 10%;
+  margin: 25px 0px;
+  border: solid 2px #e6e6e6;
+  background: white;
+  border-radius: 12.5px;
+}
+
+.profile .pfp{
+  background-image: url(https://pbs.twimg.com/profile_images/1584383834837352453/XRTUFFd__400x400.jpg);
+  background-size: cover;
+  background-origin: border-box;
+  width: 75px;
+  height: 75px;
+  border-radius: 100%;
+  border: solid 1px #00000025;
+}
+
+.profile .icons{
+  display: flex;
+  list-style: none;
+  padding: 0px;
+  margin-top: 37.5px;
+  margin-bottom: 0px;
+  width: 100%;
+  gap: 25px;
+}
+
+.skills{
+  margin: 50px auto;
+}
+
+.skills .card{
+  color: #ffffff;
+  border: solid 1px;
+  margin: 12.5px 0px;
+  padding: 12.5px 62.5px;
+  border-radius: 50px;
+  transition: 0.25s;
+}
+
+.skills p{
+  line-height: 1rem;
+  /*color: #000000;*/
+}
+
+.skills .skill{
+  list-style: none;
+  flex-wrap: wrap;
+  margin: 31.25px 0px;
+  padding: 0px;
+  width: 100%;
+}
+
+.skills .text{
+  margin: 6.25px 0px;
+}
+
+.skills .bar{
+  background: #000000;
+  height: 6px;
+  width: 100px;
+  margin: 6.25px 0px;
+  border-radius: 100px;
+}
+
+.skills .bar2{
+  background: #00000050;
+  height: 100%;
+  margin: 0px;
+  border-radius: 100px;
+}
+
+.myworks{
+  margin: 0px;
+}
+
+.myworks ul{
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+}
+
+.myworks li{
+  width: 25%;
+  margin: 0px;
+  padding: 0px;
+}
+
+@media (max-width: 500px) {
+  .myworks li{
+    width: 50%;
+  }
+}
+
+.myworks .text{
+  width: 100%;
+}
+
+.myworks a{
+  transition: 0.25s;
+  color: black;
+}
+
+.myworks a:hover{
+  opacity: 0.75;
+}
+
+#links{
+  margin: 50px auto;
+}
+
+#links .card{
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  list-style: none;
+  align-items: center;
+  gap: 25px;
+
+  padding: 37.5px 50px;
+  margin: 18.75px 0px;
+  border: solid 2px #e6e6e6;
+  background: white;
+  border-radius: 18.75px;
+}
+
+@media (max-width: 500px) {
+  #links .card {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: 37.5px 25px;
+  }
+}
+
+#links .pfp{
+  grid-column-start: 1;
+  grid-column-end: 2;
+  background-image: url("https://abs.twimg.com/sticky/default_profile_images/default_profile_400x400.png");
+  background-size: cover;
+  background-origin: border-box;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  border: solid 1px #00000025;
+  box-sizing: border-box;
+}
+
+#links .info{
+  grid-column-start: 2;
+  grid-column-end: 3;
+  gap: 25px;
+}
+
+#links .info .title{
+  margin: 0px;
+  font-size: 1.25rem;
+}
+
+#links .info .id{
+  margin: 0px;
+  opacity: 0.75;
+  color: #222222;
+}
+
+#links .url{
+  grid-column-start: 3;
+  grid-column-end: 4;
+  transition: 0.25s;
+}
+
+#links .url a{
+  background-color: #547ef1;
+  color: white;
+  padding: 10px 25px;
+  border-radius: 50px;
+  white-space: pre;
+}
+
+#links .url:hover{
+  opacity: 0.9;
+}
+
+.socials ul{
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+  padding: 0;
+  width: 100%;
+}
+
+.socials ul li{
+  margin-bottom: 31.25px;
+}
+
+.socials ul a {
+  background: #000000;
+  color: white;
+  margin: 0px 12.5px 12.5px 0px;
+  padding: 10px 25px;
+  border-radius: 50px;
+  transition: 0.25s;
+  text-align: center;
+}
+
+.socials ul a:hover{
+  opacity: 0.75;
+}

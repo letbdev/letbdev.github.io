@@ -1,0 +1,5 @@
+<svg width="480" height="360" viewBox="0 0 480 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="480" height="360" transform="matrix(1 0 0 -1 0 360)" fill="#222222"/>
+<path d="M227.5 160H235V192.5H252.5V200H227.5V160Z" fill="white"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M190 130H290V230H190V130ZM200 140H280V220H200V140Z" fill="white"/>
+</svg>
