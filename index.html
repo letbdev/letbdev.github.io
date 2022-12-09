@@ -1,4 +1,4 @@
-<html lang="ja">
+<html lang="ja" theme="dark">
 
 <head>
   <meta charset="UTF-8">
@@ -10,24 +10,61 @@
   <link rel="icon" type="image/png" href="img/favicon/favicon-32x32.png" />
   <link rel="apple-touch-icon" href="img/favicon/apple-touch-icon-152x152.png">
   <link rel="icon" type="image/svg+xml" href="img/logo.svg">
+
+  <link rel="preload" href="script.js" as="script">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Noto+Sans+JP:wght@400;700&display=swap');
   </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+  <script src="script.js"></script>
 </head>
 
-<body>
-  <header class="header">
-    <a href="#" class="logo">
-      <img src="img/logo.svg" alt="logo" width="25px">
-    </a>
-  </header>
+<body class="bg">
+
+  <div id="top">
+
+    <div class="back"></div>
+
+    <div class="logo">
+
+      <svg height="125px" viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect class="rect1" x="0" y="0" width="1000" height="100" fill="#FFFFFF"/>
+        <rect class="rect2" x="900" y="0" width="100" height="1000" fill="#FFFFFF"/>
+        <rect class="rect3" x="0" y="900" width="1000" height="100" fill="#FFFFFF"/>
+        <rect class="rect4" x="0" y="0" width="100" height="1000" fill="#FFFFFF"/>
+
+        <rect class="rect5" x="375" y="300" width="75" height="400" fill="#FFFFFF"/>
+        <rect class="rect6" x="375" y="625" width="250" height="75" fill="#FFFFFF"/>
+      </svg>
+
+    </div>
+
+    <button class="mode" onclick="changeMode()">
+      <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" viewBox="0 0 24 24" height="25px">
+        <rect fill="none" height="24" width="24"/>
+        <path d="M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36c-0.98,1.37-2.58,2.26-4.4,2.26 c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z" fill="#222222"/>
+      </svg>
+    </button>
+
+    <span id="time">10:10</span>
+    <span id="date">10/10</span>
+
+    <span id="about-img">Image by <a href="https://unsplash.com/ja/@fakurian" target="_blank">Milad Fakurian</a></span>
+      
+  </div>
+
+  <div id="header" class="animation">
+
+  </div>
 
   <div id="page" class="page">
 
     <div id="profile" class="profile">
       <h1>Lettuce Burger</h1>
+      
       <h2>Profile</h2>
-      <div class="pfcard">
+      <div class="pfcard bg">
         <div class="pfp"></div>
         <h2>れたすばーがー</h2>
         <p>
@@ -43,7 +80,10 @@
           </li>
           <li>
             <a href="https://github.com/letbdev" target="_blank">
-              <img class="icon" src="img/github.svg" alt="github" width="25px" height="25px">
+              <!--<img class="icon github" src="img/github.svg" alt="github" width="25px" height="25px">-->
+              <svg id="github" width="25px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                <path fill="#171515" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+              </svg>
             </a>
           </li>
           <li>
@@ -60,27 +100,27 @@
       <ul class="skill">
 
         <li class="card" style="border-color: #f06529;">
-          <p class="text" style="color: #f06529;">HTML</p>
+          <span class="text" style="color: #f06529;">HTML</span>
           <div class="bar" style="background: #f0652950;"><div class="bar2" style="width: 75%; background-color: #f06529;"></div></div>
         </li>
 
         <li class="card" style="border-color: #2965f1">
-          <p class="text" style="color: #2965f1;">CSS</p>
+          <span class="text" style="color: #2965f1;">CSS</span>
           <div class="bar" style="background: #2965f150;"><div class="bar2" style="width: 40%; background: #2965f1;"></div></div>
         </li>
 
         <li class="card" style="border-color: #f7a028;">
-              <p class="text" style="color: #f7a028;">Scratch</p>
-              <div class="bar" style="background: #f7a02850;"><div class="bar2" style="width: 80%; background: #f7a028;"></div></div>
+          <span class="text" style="color: #f7a028;">Scratch</span>
+          <div class="bar" style="background: #f7a02850;"><div class="bar2" style="width: 80%; background: #f7a028;"></div></div>
         </li>
 
         <li class="card" style="border-color: #306998;">
-              <p class="text" style="color: #306998;">Python</p>
-              <div class="bar" style="background: #30699850;"><div class="bar2" style="width: 25%; background: #306998;"></div></div>
+          <span class="text" style="color: #306998;">Python</span>
+          <div class="bar" style="background: #30699850;"><div class="bar2" style="width: 25%; background: #306998;"></div></div>
         </li>
 
         <li class="card" style="border-color: #f7df1e;">
-          <p class="text" style="color: #f7df1e;">JavaScript</p>
+          <span class="text" style="color: #f7df1e;">JavaScript</span>
           <div class="bar" style="background: #f7df1e50;"><div class="bar2" style="width: 10%; background: #f7df1e;"></div></div>
         </li>
 
@@ -88,33 +128,22 @@
 
     </div>
 
-    <div id="links" class="links">
+    <!--<div id="links" class="links">
       <h2>Links</h2>
       <p>準備中です</p>
 
-      <div class="card">
+      <div class="card bg">
         <div class="pfp" style="background-image: url(https://pbs.twimg.com/profile_images/1488548719062654976/u6qfBBkF_400x400.jpg)"></div>
         <div class="info">
           <p class="title"><b>Example</b></p>
-          <a href="https://twitter.com/Example" class="id"><span>@Example</span></a>
+          <a href="https://twitter.com/Example" class="id" target="_blank">@Example</a>
         </div>
         <div class="url">
-          <a href="https://example.com"><span>example.com</span></a>
+          <a href="https://example.com" target="_blank">example.com</a>
         </div>
       </div>
 
-      <!--<div class="card">
-        <div class="pfp" style="background-image: url(https://pbs.twimg.com/profile_images/1587290337587904512/Y4s_eu5O_400x400.jpg)"></div>
-        <div class="info">
-          <p class="title"><b>Elon Musk</b></p>
-          <a href="https://twitter.com/elonmusk" class="id"><span>@elonmusk</span></a>
-        </div>
-        <div class="url">
-          <a href="https://www.tesla.com/ja_jp/elon-musk"><span>tesla.com/ja_jp/elon-musk</span></a>
-        </div>
-      </div>-->
-
-    </div>
+    </div>-->
 
     <div id="socials" class="socials">
       <h2>Socials</h2>
@@ -150,17 +179,13 @@
         <li>
           <a href="https://qiita.com/letb/" target="_blank" style="color: white; background: #55C500;">Qiita</a>
         </li>
-        <li>
-          <a href="https://figma.com/@letb/" target="_blank" style="color: white; background: #FF7262;">Figma</a>
-        </li>
       </ul>
     </div>
   
   </div>
 
-    <footer>
-      <img src="img/wordmark.svg" height="25px">
-      <span>&copy 2022 letb</span>
-    </footer>
+  <div id="footer">
+
+  </div>
 
 </body>
