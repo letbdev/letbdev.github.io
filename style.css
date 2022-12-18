@@ -11,7 +11,7 @@
     --background-rgb: 34,34,34;
     --background: #222222;
     --text-rgb: 255,255,255;
-    --text: #FFFFFF;
+    --text: #eeeeee;
    --footer-rgb: 50,50,50;
    --footer: #323232;
   }
@@ -132,7 +132,7 @@ header{
   width: 100%;
   height: auto;
   position: fixed;
-  top: 0px;
+  top: -62.5px;
   z-index: 1;
   display: grid;
   grid-template-columns: 1fr 5fr 1fr;
@@ -140,13 +140,18 @@ header{
   transition: .5s;
 }
 
-.animation header{
-  top: -62.5px;
+header.show{
+  top: 0px;
 }
 
-header .is-show{
-  height: 5000px;
-  top: 0px;
+@keyframes headerAnimation {
+  0% {
+    top: -62.5px;
+  }
+
+  100% {
+    top: 0px;
+  }
 }
 
 header .banner{
