@@ -1,12 +1,39 @@
 .card{
-  padding: 50px 10%;
+  padding: 50px 75px;
   margin: 25px 0px;
-  border: solid 2px rgba(var(--text-rgb),0.1);
+  border: solid 2px var(--border);
   background: var(--background);
   border-radius: 12.5px;
 }
 
 .card .icon{
-  width: 87.5px;
-  margin-right: 50px; 
+  width: 75px;
+}
+
+.card h2{
+  margin: 25px 0;
+}
+
+@media (max-width: 500px) {
+  .card{
+    padding: 37.5px;
+  }
+
+  .card h2{
+    margin: 0.8rem 0;
+  }
+
+  .card .icon{
+    width: 50px;
+  }
+
+  #profile .pfcard {
+    padding: 37.5px;
+  }
+  #profile .pfcard h2 {
+    margin: 1rem 0;
+  }
+  #profile .pfcard .icons {
+    margin-top: 1rem;
+  }
 }

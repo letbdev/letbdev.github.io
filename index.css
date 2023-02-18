@@ -2,15 +2,15 @@ body{
   display: grid;
 }
 
-.profile .pfcard{
-  padding: 50px 10%;
+#profile .pfcard{
+  padding: 50px 75px;
   margin: 25px 0px;
   border: solid 2px rgba(var(--text-rgb),0.1);
   background: var(--background);
   border-radius: 12.5px;
 }
 
-.profile .pfp{
+#profile .pfp{
   background-image: url(https://pbs.twimg.com/profile_images/1584383834837352453/XRTUFFd__400x400.jpg);
   background-size: cover;
   background-origin: border-box;
@@ -20,7 +20,11 @@ body{
   border: solid 1px rgba(var(--text-rgb),0.1);
 }
 
-.profile .icons{
+#profile h2{
+  margin: 25px 0;
+}
+
+#profile .icons{
   display: flex;
   list-style: none;
   padding: 0px;
@@ -30,15 +34,20 @@ body{
   gap: 25px;
 }
 
+#profile .icon{
+  display: flex;
+  align-items: center;
+}
+
 #github path {
   fill: var(--text);
 }
 
-.skills{
+#skills{
   margin: 50px auto;
 }
 
-.skills .card{
+#skills .card{
   color: var(--background);
   border: solid 1px;
   margin: 12.5px 0px;
@@ -48,12 +57,12 @@ body{
   gap: 25px;
 }
 
-.skills span{
+#skills span{
   line-height: 1rem;
   /*color: #000000;*/
 }
 
-.skills .skill{
+#skills .skill{
   list-style: none;
   flex-wrap: wrap;
   margin: 31.25px 0px;
@@ -61,11 +70,11 @@ body{
   width: 100%;
 }
 
-.skills .text{
+#skills .text{
   margin: 0px;
 }
 
-.skills .bar{
+#skills .bar{
   background: #000000;
   height: 6px;
   width: 100px;
@@ -73,7 +82,7 @@ body{
   border-radius: 100px;
 }
 
-.skills .bar2{
+#skills .bar2{
   background: #00000050;
   height: 100%;
   margin: 0px;
@@ -89,7 +98,6 @@ body{
   grid-template-columns: auto 1fr auto;
   list-style: none;
   align-items: center;
-  gap: 25px;
 
   padding: 37.5px 50px;
   margin: 18.75px 0px;
@@ -98,13 +106,8 @@ body{
   border-radius: 18.75px;
 }
 
-@media (max-width: 500px) {
-  #links .card {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    padding: 37.5px 25px;
-  }
+#links .profile{
+  display: flex;
 }
 
 #links .pfp{
@@ -118,6 +121,8 @@ body{
   border-radius: 100%;
   border: solid 1px rgba(var(--text-rgb),0.1);
   box-sizing: border-box;
+  margin-right: 25px;
+
 }
 
 #links .info{
@@ -141,14 +146,13 @@ body{
   grid-column-start: 3;
   grid-column-end: 4;
   transition: 0.25s;
-  color: var(--background);
+  background-color: #547ef1;
+  border-radius: 50px;
+  padding: 10px 25px;
 }
 
 #links .url a{
-  background-color: #547ef1;
   color: white;
-  padding: 10px 25px;
-  border-radius: 50px;
   white-space: pre;
 }
 
@@ -162,22 +166,42 @@ body{
   flex-wrap: wrap;
   padding: 0;
   width: 100%;
-}
-
-.socials ul li{
-  margin-bottom: 31.25px;
+  gap: 12.5px;
 }
 
 .socials ul a {
   background: #000000;
   color: white;
-  margin: 0px 12.5px 12.5px 0px;
   padding: 10px 25px;
   border-radius: 50px;
   transition: 0.25s;
   text-align: center;
 }
 
+.socials ul a li{
+  color: white;
+}
+
 .socials ul a:hover{
   opacity: 0.75;
+}
+
+@media (max-width: 500px) {
+  #links .card {
+    display: flex;
+    gap: 12.5px;
+    flex-direction: column;
+    align-items: start;
+    padding: 37.5px;
+  }
+  #profile .pfcard {
+    padding: 37.5px;
+  }
+  #profile .pfcard h2 {
+    margin: 1rem 0;
+  }
+  #profile .pfcard .icons {
+    margin-top: 1rem;
+  }
+  
 }

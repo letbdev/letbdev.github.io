@@ -1,6 +1,7 @@
+<!DOCTYPE html>
 <html lang="ja" theme="dark">
 
-<head>
+<head prefix="og: http://ogp.me/ns#">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>れたすばーがー</title>
@@ -10,14 +11,22 @@
   <link rel="icon" type="image/png" href="img/favicon/favicon-32x32.png" />
   <link rel="apple-touch-icon" href="img/favicon/apple-touch-icon-152x152.png">
   <link rel="icon" type="image/svg+xml" href="img/logo.svg">
+  <meta property="og:url" content="https://letbdev.github.io/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:description" content="れたすばーがーのウェブサイト" />
+  <meta property="og:site_name" content="れたすばーがー" />
+  <meta property="og:image" content="/img/site-banner.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@letb_tw" />
 
   <link rel="preload" href="script.js" as="script">
+  <link rel="preload" href="index.js" as="script">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Noto+Sans+JP:wght@400;700&display=swap');
   </style>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
   <script src="script.js"></script>
+  <script src="index.js"></script>
 </head>
 
 <body class="bg">
@@ -41,112 +50,61 @@
         </p>
 
         <ul class="icons">
-          <li>
+          <li class="icon">
             <a href="https://twitter.com/letb_tw" target="_blank">
-              <img class="icon" src="img/twitter.svg" alt="twitter" width="25px" height="25px">
+              <svg width="25px" height="25px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 248 204">
+                <path fill="#1DA1F2" d="M221.95 51.29c.15 2.17.15 4.34.15 6.53 0 66.73-50.8 143.69-143.69 143.69v-.04c-27.44.04-54.31-7.82-77.41-22.64 3.99.48 8 .72 12.02.73 22.74.02 44.83-7.61 62.72-21.66-21.61-.41-40.56-14.5-47.18-35.07 7.57 1.46 15.37 1.16 22.8-.87-23.56-4.76-40.51-25.46-40.51-49.5v-.64c7.02 3.91 14.88 6.08 22.92 6.32C11.58 63.31 4.74 33.79 18.14 10.71c25.64 31.55 63.47 50.73 104.08 52.76-4.07-17.54 1.49-35.92 14.61-48.25 20.34-19.12 52.33-18.14 71.45 2.19 11.31-2.23 22.15-6.38 32.07-12.26-3.77 11.69-11.66 21.62-22.2 27.93 10.01-1.18 19.79-3.86 29-7.95-6.78 10.16-15.32 19.01-25.2 26.16z"/>
+              </svg>
             </a>
           </li>
-          <li>
+          <li class="icon">
             <a href="https://github.com/letbdev" target="_blank">
-              <!--<img class="icon github" src="img/github.svg" alt="github" width="25px" height="25px">-->
-              <svg id="github" width="25px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+              <svg id="github" height="25px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
                 <path fill="#171515" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
               </svg>
             </a>
           </li>
-          <li>
+          <li class="icon">
             <a href="https://note.com/letb" target="_blank">
-              <img class="icon" src="img/note.svg" alt="note" width="25px" height="25px">
+              <svg height="25px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 226">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M76.5132 76.2837V59.0639C76.5132 55.9258 76.6757 54.8793 77.1588 53.2694C78.45 48.8441 82.8096 45.5454 87.9744 45.5454C93.1392 45.5454 97.4974 48.9243 98.7886 53.2694C99.2732 54.8793 99.4356 55.9258 99.4356 59.0639V85.6176C99.4356 87.2275 99.4356 88.8359 99.1121 90.2852C98.225 94.3078 94.5929 97.9304 90.5568 98.8149C89.1046 99.136 87.4898 99.136 85.8751 99.136H59.2415C56.094 99.136 55.0444 98.9754 53.4297 98.4923C49.0715 97.205 45.6824 92.8599 45.6824 87.7106C45.6824 82.5598 49.0715 78.2147 53.4297 76.9274C55.0444 76.4443 56.094 76.2837 59.2415 76.2837H76.5132ZM171.428 196.665H28.5718V71.2147C28.5718 69.6048 29.1369 68.2372 30.2671 67.1104L67.3123 30.1749C68.4424 29.0495 69.8142 28.4861 71.4289 28.4861H171.428V196.665ZM187.652 0.160555C186.925 0.0802763 185.956 0 184.1 0H67.6344C66.3446 0 65.0534 0.0802763 64.1648 0.160555C58.8375 0.643663 54.0753 3.13805 50.2822 6.91977L6.94058 50.1314C3.14893 53.9145 0.645607 58.661 0.162483 63.9724C0.0805252 64.8569 0 66.1442 0 67.4315V209.297C0 211.148 0.0805252 212.114 0.162483 212.838C0.806647 218.874 6.29498 224.344 12.3484 224.988C13.076 225.069 14.0436 225.15 15.8999 225.15H184.1C185.956 225.15 186.925 225.069 187.652 224.988C193.705 224.344 199.193 218.874 199.839 212.838C199.918 212.114 200 211.148 200 209.297V15.8522C200 14.0015 199.918 13.0353 199.839 12.3114C199.193 6.2761 193.705 0.804221 187.652 0.160555Z" fill="#238f76"/>
+              </svg>                
             </a>
           </li>
         </ul>
       </div>
     </div>
 
-    <div id="skills" class="skills">
+    <div id="skills">
       <h2>Skills</h2>
       <ul class="skill">
-
-        <li class="card" style="border-color: #f06529;">
-          <span class="text" style="color: #f06529;">HTML</span>
-          <div class="bar" style="background: #f0652950;"><div class="bar2" style="width: 75%; background-color: #f06529;"></div></div>
-        </li>
-
-        <li class="card" style="border-color: #2965f1">
-          <span class="text" style="color: #2965f1;">CSS</span>
-          <div class="bar" style="background: #2965f150;"><div class="bar2" style="width: 40%; background: #2965f1;"></div></div>
-        </li>
-
-        <li class="card" style="border-color: #f7a028;">
-          <span class="text" style="color: #f7a028;">Scratch</span>
-          <div class="bar" style="background: #f7a02850;"><div class="bar2" style="width: 80%; background: #f7a028;"></div></div>
-        </li>
-
-        <li class="card" style="border-color: #306998;">
-          <span class="text" style="color: #306998;">Python</span>
-          <div class="bar" style="background: #30699850;"><div class="bar2" style="width: 25%; background: #306998;"></div></div>
-        </li>
-
-        <li class="card" style="border-color: #f7df1e;">
-          <span class="text" style="color: #f7df1e;">JavaScript</span>
-          <div class="bar" style="background: #f7df1e50;"><div class="bar2" style="width: 10%; background: #f7df1e;"></div></div>
-        </li>
 
       </ul>
 
     </div>
 
-    <!--<div id="links" class="links">
+    <div id="links" class="links">
       <h2>Links</h2>
-      <p>準備中です</p>
 
       <div class="card bg">
-        <div class="pfp" style="background-image: url(https://pbs.twimg.com/profile_images/1488548719062654976/u6qfBBkF_400x400.jpg)"></div>
-        <div class="info">
-          <p class="title"><b>Example</b></p>
-          <a href="https://twitter.com/Example" class="id" target="_blank">@Example</a>
+          <div class="profile">
+            <div class="pfp" style="background-image: url(https://pbs.twimg.com/profile_images/1488548719062654976/u6qfBBkF_400x400.jpg)"></div>
+            <div class="info">
+              <p class="title"><b>Example</b></p>
+              <a href="https://twitter.com/Example" class="id" target="_blank">@Example</a>
+            </div>
         </div>
         <div class="url">
           <a href="https://example.com" target="_blank">example.com</a>
         </div>
       </div>
 
-    </div>-->
+    </div>
 
     <div id="socials" class="socials">
       <h2>Socials</h2>
-      <ul>
-        <li>
-          <a href="https://twitter.com/letb_tw" target="_blank" style="color: white; background: #1DA1F2;">Twitter</a>
-        </li>
-        <li>
-          <a href="https://github.com/letbdev" target="_blank" style="color: white; background: #333333;">GitHub</a>
-        </li>
-        <li>
-          <a href="https://scratch.mit.edu/users/letb_dev/" target="_blank"
-            style="color: white; background: #f7a028;">Scratch</a>
-        </li>
-        <li>
-          <a href="https://wasteof.money/users/burger" target="_blank"
-            style="color: white; background: #6366F1;">wasteof.money</a>
-        </li>
-        </li>
-        <li>
-          <a href="https://dribbble.com/letb" target="_blank" style="color: white; background: #EA4B89;">Dribbble</a>
-        </li>
-        <li>
-          <a href="https://www.youtube.com/@letb" target="_blank"
-            style="color: white; background: #FF0000;">YouTube</a>
-        </li>
-        <li>
-          <a href="https://note.com/letb/" target="_blank" style="color: white; background: #41C9B4;">note</a>
-        </li>
-        <li>
-          <a href="https://zenn.dev/lb/" target="_blank" style="color: white; background: #3EA8FF;">zenn</a>
-        </li>
-        <li>
-          <a href="https://qiita.com/letb/" target="_blank" style="color: white; background: #55C500;">Qiita</a>
-        </li>
+      <ul class="social">
+
       </ul>
     </div>
   

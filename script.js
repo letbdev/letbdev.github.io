@@ -50,71 +50,9 @@ const changeMode = function(){
     
 }
 
-const logoAnimation = function(){
-    
-    $('#top .logo svg').height("200px")
-    $("#top .logo svg").animate({
-        "width": "100px",
-        "height": "100px"
-    },1000,"easeInOutQuad");
-
-    $("#top .logo svg .rect1").attr({width: '0'})
-    $("#top .logo svg .rect1").animate({
-        "width": "1000"
-    },250,"linear");
-
-    $("#top .logo svg .rect2").attr({height: '0'})
-    $("#top .logo svg .rect2").delay(250).animate({
-        "height": "1000"
-    },250,"linear");
-
-    $("#top .logo svg .rect3").attr({width: '0', x:'1000'})
-    $("#top .logo svg .rect3").delay(500).animate({
-        "width": "1000",
-        "x": "0"
-    },250,"linear");
-
-    $("#top .logo svg .rect4").attr({height: '0', y:'1000'})
-    $("#top .logo svg .rect4").delay(750).animate({
-        "height": "1000",
-        "y": "0"
-    },250,"linear");
-
-    $("#top .logo svg .rect5").attr({height: '0'})
-    $("#top .logo svg .rect5").delay(750).animate({
-        "height": "400"
-    },125,"linear");
-
-    $("#top .logo svg .rect6").attr({width: '0'})
-    $("#top .logo svg .rect6").delay(875).animate({
-        "width": "250"
-    },125,"linear");
-
-}
-
-const headerAnimation = function () {
-    let pos = 0;
-    $(window).on('load scroll', function () {
-        const $header = $('header');
-        const headerHeight = $header.outerHeight();
-        const currentPos = $(this).scrollTop();
-
-        if (currentPos > pos) {
-            $header.removeClass('show');
-            console.log('nununu')
-        } else {
-            $header.addClass('show');
-        }
-        pos = currentPos;
-
-    });
-    
-};
-
 $(function(){
     loadAssets();
     setMode();
-    headerAnimation();
 });
 
 window.onload = function() {
